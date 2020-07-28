@@ -1,0 +1,7 @@
+<%= image_tag(@item.picture) %>
+<h5><%= @item.name %></h5>
+<h5><%= @item.year_created %></h5>
+<h5><%= @item.classification %></h5>
+<p><%= @item.description %></p>
+<%= button_to "Edit Item", {action: "edit"}, :method => "get"%>
+<%= button_to "Delete Item", item_path(@item), :method => "delete", data: { confirm: "Are you sure? It will be gone forever!" } %>

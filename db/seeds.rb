@@ -1,4 +1,4 @@
-# @contemporary_art = ["https://i.pinimg.com/236x/9c/84/94/9c8494d200d49913a256a69a0b683bde.jpg", "https://i.pinimg.com/236x/58/ec/b8/58ecb8829a54cfc446808144c27d52fb.jpg”, “https://i.pinimg.com/236x/c5/2a/13/c52a13a6d2cc93f991720f6866100f33.jpg", "https://i.pinimg.com/236x/82/44/19/8244192c6c25f9cfbb35d80807e4636c.jpg", "https://i.pinimg.com/236x/08/a4/3f/08a43fa081747b31bf2d76d57f5fd2f4.jpg", "https://i.pinimg.com/236x/57/d6/dd/57d6dd9cd3443a15e48b28e6b6e27aca.jpg", "https://i.pinimg.com/236x/73/5a/d4/735ad48a85ddde0016cdf43d0a5acf44.jpg"]
+ @contemporary_art = ["https://i.pinimg.com/236x/9c/84/94/9c8494d200d49913a256a69a0b683bde.jpg", "https://i.pinimg.com/236x/58/ec/b8/58ecb8829a54cfc446808144c27d52fb.jpg”, “https://i.pinimg.com/236x/c5/2a/13/c52a13a6d2cc93f991720f6866100f33.jpg", "https://i.pinimg.com/236x/82/44/19/8244192c6c25f9cfbb35d80807e4636c.jpg", "https://i.pinimg.com/236x/08/a4/3f/08a43fa081747b31bf2d76d57f5fd2f4.jpg", "https://i.pinimg.com/236x/57/d6/dd/57d6dd9cd3443a15e48b28e6b6e27aca.jpg", "https://i.pinimg.com/236x/73/5a/d4/735ad48a85ddde0016cdf43d0a5acf44.jpg"]
 # @impressionist_art = ["https://i.pinimg.com/236x/83/3e/c3/833ec3b849e4ff710cf904e1c1c6c22f.jpg", "https://i.pinimg.com/236x/fc/7d/e6/fc7de6df00a081cd2c0b8f63ec89337f.jpg", "https://i.pinimg.com/236x/36/c8/13/36c813e94ff57108be60ebf90ecaabd7.jpg", "https://i.pinimg.com/236x/51/37/c9/5137c9e6ae7b7fc17da8eb679519af5b.jpg", "https://i.pinimg.com/236x/6c/57/86/6c5786307e284f8e36cd88c31f056814.jpg", "https://i.pinimg.com/236x/f2/ba/cd/f2bacdfc71831ab6a07c01f3dbf0253a.jpg"]
 # @taxidermy = ["https://i.pinimg.com/236x/b9/9c/20/b99c2080209d7f1a6fab142402b9bb89.jpg", "https://i.pinimg.com/236x/2b/a8/e8/2ba8e8be0c8b365635d9c0abe60251b9.jpg", "https://i.pinimg.com/236x/ad/88/07/ad88073f3914f405dda88602eb961763.jpg", "https://i.pinimg.com/236x/06/f2/19/06f21932ad221dbcc22d14ac3f200672.jpg" ]
 # @geology = [ "https://i.pinimg.com/236x/95/8a/4b/958a4b7d96c2eeee81cc7e5c902aed74.jpg", "https://i.pinimg.com/236x/1a/5c/cf/1a5ccf0ce56edda04adf65f77cb8804e.jpg", "https://i.pinimg.com/236x/89/da/53/89da53589e0f425987ef80879fe08289.jpg", "https://i.pinimg.com/236x/25/c3/c2/25c3c28022782e1f4bd34218494cab31.jpg", "https://i.pinimg.com/236x/83/6b/6d/836b6d35c11e1530976b1b4c345c172a.jpg"]
@@ -15,11 +15,14 @@ User.destroy_all
 Item.destroy_all
 Collection.destroy_all
 
-30.times do
+15.times do
     User.create(username: Faker::Internet.username , password: Faker::Internet.password , name_first: Faker::Name.first_name , name_last: Faker::Name.last_name , location: Faker::Address.country, picture: @people.sample )
 end
 
-60.times do
+10.times do
     Collection.create(name: Faker::Commerce.department ,user_id: User.all.sample.id )
 end
 
+3.times do
+    Item.create(name: Faker::Commerce.product_name, year_created: rand(1960...1970), description: Faker::String.random , picture: @contemporary_art.sample , classification: "contemporary art", collection_id: Collection.all.sample.id , exhibit_id: nil)
+end
