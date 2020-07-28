@@ -1,1 +1,13 @@
-this is a form for exhibits
+<%= form_for @exhibit do |f| %>
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br/><br/>
+    <%= f.label :picture %>:
+    <%= f.text_field :picture %><br/><br/>
+    <%= f.label :category %>:
+    <%= f.text_field :category %><br/><br/>
+    <%= f.label :date %>:
+    <%= f.text_field :date %><br/><br/>
+    <%= f.label :museum_id %>:
+    <%= f.collection_select(:museum_id, Museum.all, :id, :name) %><br/><br/>
+    <%= f.submit %>
+    <% end %>
