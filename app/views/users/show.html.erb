@@ -4,5 +4,14 @@
     </nav>
 <h3><%= @user.location %>
 <h3>My Collections</h3>
+<% @user.collections.each do |collection| %>
+    <ul>
+        <li><%= link_to collection.name, collection_path(collection) %></li>
+    </ul>
+<% end %>
+<h3>My Items</h3>
+<% @user.items.each do |item| %>
+    <%= link_to item.name, item_path(item) %>
+<% end %>
 <%= button_to "Edit Profile", {:action => "edit"}, :method => "get" %>
 <%= button_to "Delete Profile", user_path(@user), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
