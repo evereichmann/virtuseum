@@ -1,1 +1,6 @@
-this shows all the museums
+<h1>Museum Index Page</h1>
+    <% @museums.each do |museum| %>
+    <ul>
+        <li><%= link_to museum.name, museum %></li>
+    </ul>
+    <% end %>
