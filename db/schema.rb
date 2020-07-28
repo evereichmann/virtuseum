@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2020_07_28_010837) do
-=======
-ActiveRecord::Schema.define(version: 2020_07_28_013900) do
->>>>>>> 4bfa99c8b868b809493602c05b79c313b686a36d
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id"
