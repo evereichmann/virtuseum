@@ -15,14 +15,14 @@ User.destroy_all
 Item.destroy_all
 Collection.destroy_all
 
-30.times do
+15.times do
     User.create(username: Faker::Internet.username , password: Faker::Internet.password , name_first: Faker::Name.first_name , name_last: Faker::Name.last_name , location: Faker::Address.country, picture: @people.sample )
 end
 
-60.times do
+10.times do
     Collection.create(name: Faker::Commerce.department ,user_id: User.all.sample.id )
 end
 
-12.times do
-	Item.create( name: Faker::Commerce.product_name, year_created: rand(1960...1970), description: Faker::String.random , picture: @contemporary_art.sample , classification: "contemporary art" , collection_id: nil , exhibit_id: nil)
+3.times do
+    Item.create(name: Faker::Commerce.product_name, year_created: rand(1960...1970), description: Faker::String.random , picture: @contemporary_art.sample , classification: "contemporary art", collection_id: Collection.all.sample.id , exhibit_id: nil)
 end
