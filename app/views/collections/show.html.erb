@@ -1,0 +1,8 @@
+<h1><%= @collection.name %></h1>
+<p><%= @collection.user.name_first %> <%= @collection.user.name_last %></p>
+<h3>Items</h3>
+<% @collection.items.each do |item| %>
+<ul>
+<li><%= item.name %></li>
+</ul>
+<% end %>

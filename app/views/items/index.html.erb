@@ -3,7 +3,9 @@
 <%= button_to "Home", {:action => "home", :controller => "pages"}, :method => "get"%>
 </nav>
 <br/>
+<nav class="container">
 <% @items.each do |item| %>
-<%= link_to image_tag(item.picture), item_path(item)%>
-<figcaption><%= link_to item.name, item_path(item) %></figcaption>
+<nav class="image"><%= link_to image_tag(item.picture), item_path(item)%></nav>
+<nav class="overlay"><%= link_to item.name, item_path(item) %></nav>
+</nav>
 <% end %>
