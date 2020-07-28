@@ -1,0 +1,9 @@
+<h1>The Archive Basement</h1>
+<nav class="navigation">
+<%= button_to "Home", {:action => "home", :controller => "pages"}, :method => "get"%>
+</nav>
+<br/>
+<% @items.each do |item| %>
+<%= link_to image_tag(item.picture), item_path(item)%>
+<figcaption><%= link_to item.name, item_path(item) %></figcaption>
+<% end %>
