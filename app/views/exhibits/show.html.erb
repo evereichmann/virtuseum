@@ -1,1 +1,8 @@
-this is an exhibit show page
+<%= image_tag(@exhibit.picture)%>
+    <nav class="exhibit">
+    <h1><%= @exhibit.name %></h1>
+    </nav>
+<h3>My Museum</h3>
+<%= link_to @exhibit.museum.name, @exhibit.museum %><br/><br/>
+<%= button_to "Edit Exhibit", {:action => "edit"}, :method => "get" %>
+<%= button_to "Delete Exhibit", exhibit_path(@exhibit), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
