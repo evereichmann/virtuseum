@@ -10,11 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_234617) do
+ActiveRecord::Schema.define(version: 2020_07_28_013900) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "curators", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "museum_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exhibits", force: :cascade do |t|
+    t.string "name"
+    t.string "picture"
+    t.string "category"
+    t.string "date"
+    t.integer "museum_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,9 +41,17 @@ ActiveRecord::Schema.define(version: 2020_07_27_234617) do
     t.integer "year_created"
     t.string "description"
     t.string "picture"
-    t.string "type"
+    t.string "classification"
     t.integer "collection_id"
     t.integer "exhibit_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "museums", force: :cascade do |t|
+    t.string "name"
+    t.string "field_of_study"
+    t.string "information"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
