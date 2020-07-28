@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :curators
+  resources :museums
+  resources :exhibits
   root to: 'pages#home'
   
   resources :collections
