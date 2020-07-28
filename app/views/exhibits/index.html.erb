@@ -1,1 +1,6 @@
-index of exhibits
+<h1>Exhibit Index Page</h1>
+    <% @exhibits.each do |exhibit| %>
+    <ul>
+        <li><%= link_to exhibit.name, exhibit %></li>
+    </ul>
+    <% end %>

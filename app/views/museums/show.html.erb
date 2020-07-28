@@ -1,1 +1,7 @@
-this is a museum show page
+    <h1><%= @museum.name %></h1>
+    </nav>
+<h3> Museum of: <%= @museum.field_of_study %> <h3>
+<h3>Information</h3>
+<%= @museum.information %>
+<%= button_to "Edit Museum", {:action => "edit"}, :method => "get" %>
+<%= button_to "Delete Museum", @museum, method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
