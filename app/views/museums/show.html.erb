@@ -1,3 +1,6 @@
+<% if flash[:error] %>
+<p> <h3><%= flash[:error] %></h3> </p>
+<% end %>
 <h1><%= @museum.name %></h1>
     <h3> Museum of: <%= @museum.field_of_study %> </h3>
     <% @museum.users.each do |user| %>
@@ -14,4 +17,3 @@
                 <% end %>
                 <br/>
             <%= button_to "Edit Museum", {:action => "edit"}, :method => "get" %>
-            <%= button_to "Delete Museum", @museum, method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>

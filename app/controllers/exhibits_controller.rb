@@ -48,6 +48,16 @@ class ExhibitsController < ApplicationController
         redirect_to exhibit_path(@exhibit)
     end
 
+    def destroy
+        @exhibit = Exhibit.find(params[:id])
+        if @users == @current_user
+            @exhibit.destroy(exhibit_params)
+        else
+            flash[:error] = "Can't Edit Someone Else's Exhibit"
+            redirect_to exhibit_path(@exhibit)
+        end
+    end    
+
     private
 
     def exhibit_params

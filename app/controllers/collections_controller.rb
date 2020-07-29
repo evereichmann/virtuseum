@@ -26,6 +26,12 @@ class CollectionsController < ApplicationController
     def edit
         @user = User.all
         @collection = Collection.find(params[:id])
+        if @users == @current_user
+            render :edit
+        else
+            flash[:error] = "Can't Edit Someone Else's Collection"
+            redirect_to @collection
+        end
     end    
 #update
     def update
@@ -36,8 +42,12 @@ class CollectionsController < ApplicationController
 #delete
         def destroy
         @collection = Collection.find(params[:id])
-        @collection.destroy
-        redirect_to collections_path
+        if @users == @current_user
+            @collection.destroy
+        else
+            flash[:error] = "Can't Edit Someone Else's Collection"
+            redirect_to collection_path(@collection)
+        end
     end    
 #private params
 private
