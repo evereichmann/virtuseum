@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
         if @user && @user.authenticate(params[:session][:password])
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to root_path
         else
             flash[:error] = "Username or Password is incorrect"
             redirect_to new_session_path
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete(:user_id)
-        redirect_to new_user_path
+        redirect_to root_path
     end
 end

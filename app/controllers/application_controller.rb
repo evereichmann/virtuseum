@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 
     # self.abstract_class = true
-
     before_action :authorized
 
     def set_user
@@ -9,7 +8,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-        :root unless set_user 
+        redirect_to new_user_path unless set_user
     end
-
+   
 end

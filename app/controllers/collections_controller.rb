@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
-#index
+    
+    #index
     def index
         @collections = Collection.all
     end    

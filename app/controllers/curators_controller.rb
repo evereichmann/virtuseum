@@ -1,5 +1,5 @@
 class CuratorsController < ApplicationController
-
+    
     def new
         @curator = Curator.new
     end
