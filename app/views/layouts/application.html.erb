@@ -13,13 +13,15 @@
     <h1>Virtuseum</h1>
     <br/>
         <ul>
-          <li><%= link_to "Items", items_path %></li></div>
-          <li><%= link_to "Collection", collections_path %></li></div>
-          <li><%= link_to "Museums", museums_path %></li></div>
-          <li><%= link_to "Exhibits", exhibits_path %></li></div>
             <% if @current_user %>
               <li><a href="/users/<%= @current_user.id %>">Welcome <%= @current_user.name_first %></a></li>
-              <li class='right'><%= link_to "Log-out", logout_path, method: :delete %></li>
+              <li><%= link_to "Log-out", logout_path, method: :delete %></li>
+              <li><%= link_to "Users", users_path %></li>
+              <li><%= link_to "Items", items_path %></li>
+              <li><%= link_to "Collection", collections_path %></li>
+              <li><%= link_to "Museums", museums_path %></li>
+              <li><%= link_to "Exhibits", exhibits_path %></li>
+              <li><%= link_to "Become A Curator", new_curator_path %></li>
             <% else %>
               <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
               <li class='right'><%= link_to 'Login', new_session_path %></li>
