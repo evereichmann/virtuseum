@@ -35,7 +35,7 @@ end
 end
 
 30.times do
-    Item.create(name: Faker::Commerce.product_name, year_created: rand(1960...1970), description: Faker::String.random , picture: @contemporary_art.sample , classification: "contemporary art", collection_id: Collection.all.sample.id , exhibit_id: Exhibit.all.sample.id)
+    Item.create(name: Faker::Commerce.product_name, year_created: -1960 , description: Faker::String.random , picture: @contemporary_art.sample , classification: "contemporary art", collection_id: Collection.all.sample.id , exhibit_id: Exhibit.all.sample.id)
 end
 
 5.times do

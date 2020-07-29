@@ -3,7 +3,7 @@
 <% end %>
 <%= image_tag(@item.picture) %>
 <h5><%= @item.name %></h5>
-<h5><%= @item.year_created %></h5>
+<h5><%= @item.date_ad_bc %></h5>
 <h5><%= @item.classification %></h5>
 <p><%= @item.description %></p>
 <%= button_to "Edit Item", {action: "edit"}, :method => "get"%>
