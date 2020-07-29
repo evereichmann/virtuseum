@@ -1,11 +1,14 @@
 class ExhibitsController < ApplicationController
 
+    skip_before_action :authorized, only: [:index, :show]
+
     def index  
         @exhibits = Exhibit.all
     end
     
     def show
         @exhibit = Exhibit.find(params[:id])
+
     end
 
     def new 
@@ -24,8 +27,19 @@ class ExhibitsController < ApplicationController
 
 
     def edit
-        @museum = Museum.all
+        # @museum = Museum.all
         @exhibit = Exhibit.find(params[:id])
+        @museum = @exhibit.museum
+        @users = @museum.users
+
+
+        if @users == @current_user
+            render :edit
+        else
+            flash[:error] = "Can't Edit Someone Else's Exhibit"
+            redirect_to @exhibit
+        end
+
     end
 
     def update
