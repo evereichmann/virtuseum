@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-        redirect_to new_user_path unless set_user 
+        :root unless set_user 
     end
 
 end
