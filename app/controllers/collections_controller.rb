@@ -10,6 +10,7 @@ class CollectionsController < ApplicationController
 #new
     def new
         @user = User.all
+        @item = Item.new
         @collection = Collection.new
     end    
 #create

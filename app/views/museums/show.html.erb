@@ -3,5 +3,11 @@
 <h3> Museum of: <%= @museum.field_of_study %> <h3>
 <h3>Information</h3>
 <%= @museum.information %>
+<h3>Our Exhibits</h3>
+<% @museum.exhibits.each do |exhibit| %>
+<ul>
+<li><%= link_to exhibit.name, exhibit_path(exhibit) %></li>
+</ul>
+<% end %>
 <%= button_to "Edit Museum", {:action => "edit"}, :method => "get" %>
 <%= button_to "Delete Museum", @museum, method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
