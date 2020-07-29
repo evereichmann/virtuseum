@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
         @current_user = User.find_by(id: session[:user_id])
     end
 
-    # def authorized
-    #     redirect_to new_user_path unless set_user 
-    # end
+    def authorized
+        redirect_to new_user_path unless set_user 
+    end
 
 end
