@@ -1,3 +1,6 @@
+<% if flash[:error] %>
+<p> <h3><%= flash[:error] %></h3> </p>
+<% end %>
 <%= image_tag(@item.picture) %>
 <h5><%= @item.name %></h5>
 <h5><%= @item.year_created %></h5>

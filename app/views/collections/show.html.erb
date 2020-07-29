@@ -1,3 +1,6 @@
+<% if flash[:error] %>
+<p> <h3><%= flash[:error] %></h3> </p>
+<% end %>
 <h1><%= @collection.name %></h1>
 <p><a href="/users/<%= @collection.user.id%>"><%= @collection.user.name_first %> <%= @collection.user.name_last %></a></p>
 <h3>Items</h3>
@@ -5,5 +8,5 @@
 <%= link_to image_tag(item.picture), item_path(item) %>
 <p><%= link_to item.name, item_path(item) %><p>
 <% end %>
-<%= button_to "Edit Profile", {:action => "edit"}, :method => "get" %>
-<%= button_to "Delete Profile", collection_path(@collection), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
+<%= button_to "Edit Collection", {:action => "edit"}, :method => "get" %>
+<%= button_to "Delete Collection", collection_path(@collection), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>

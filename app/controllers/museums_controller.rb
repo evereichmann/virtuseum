@@ -19,6 +19,12 @@ class MuseumsController < ApplicationController
 
     def edit
         @museum = Museum.find(params[:id])
+        if @users == @current_user
+            render :edit
+        else
+            flash[:error] = "Can't Edit Someone Else's Collection"
+            redirect_to @museum
+        end
     end
 
     def update

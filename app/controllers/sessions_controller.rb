@@ -1,10 +1,6 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :authorized, only: [:new, :login, :root]
-
-    def root 
-        redirect_to 'pages#home'
-    end    
+    skip_before_action :authorized, only: [:new, :login]   
 
     def new 
         render :login
@@ -26,6 +22,6 @@ class SessionsController < ApplicationController
 
     def logout
         session.delete(:user_id)
-        redirect_to 'pages#home'
+        redirect_to new_user_path
     end
 end
