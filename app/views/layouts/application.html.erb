@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <h1>Virtuseum</h1>
+    <br/>
+        <ul>
+          <li><%= link_to "Items", items_path %></li></div>
+          <li><%= link_to "Collection", collections_path %></li></div>
+          <li><%= link_to "Museums", museums_path %></li></div>
+          <li><%= link_to "Exhibits", exhibits_path %></li></div>
+            <% if @current_user %>
+              <li>Welcome <%= @current_user.name_first %></li>
+              <li class='right'><%= link_to "Log-out", logout_path, method: :delete %></li>
+            <% else %>
+              <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+              <li class='right'><%= link_to 'Login', new_session_path %></li>
+            <% end %>
+        </ul>
     <%= yield %>
   </body>
 </html>

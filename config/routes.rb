@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :curators
-  resources :museums
-  resources :exhibits
   root to: 'pages#home'
   
+  resources :museums
+  resources :exhibits
+  resources :curators
   resources :collections
   resources :items
   resources :users
