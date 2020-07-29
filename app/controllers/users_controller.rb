@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 #index
+
+# skip_before_action :authorized, only: [:new, :create]
+
     def index
         @users = User.all
     end    
@@ -17,7 +20,7 @@ class UsersController < ApplicationController
 
         if @user.valid?
             session[:user_id] = @user.id
-            
+
             redirect_to user_path(@user)
         else
             flas[:errors] = user.errors.full_messages
