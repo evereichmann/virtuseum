@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 #index
-
 skip_before_action :authorized, only: [:new, :create]
 
     def index
@@ -10,11 +9,11 @@ skip_before_action :authorized, only: [:new, :create]
 def show 
     @user = User.find(params[:id])
 
-    if @user == @current_user 
-      render :show 
-    else 
-      redirect_to users_path
-    end 
+    # if @user == @current_user 
+    #   render :show 
+    # else 
+    #   redirect_to users_path
+    # end 
   end    
 #new
     def new
