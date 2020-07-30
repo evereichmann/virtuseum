@@ -24,7 +24,8 @@
                   <li>Type of Museum</li>
                     <ul>
                       <% Museum.museum_field_of_study.each do |field| %>
-                      <li><%= field %></li>
+                      <li><%= link_to field %></li>
+                      #doesn't work idk what to do right now
                       <% end %> 
                     </ul>
                      </ul></div> </div>
