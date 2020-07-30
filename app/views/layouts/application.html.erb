@@ -18,24 +18,21 @@
               <li><%= link_to "Users", users_path %></li>
               <li><%= link_to "Items", items_path %></li>
               <li><%= link_to "Collection", collections_path %></li>
-                <ul>
-                <li></li>
-                </ul>
               <li><%= link_to "Museums", museums_path %></li>
-                <ul>
+                  <ul>
                   <li>Type of Museum</li>
                     <ul>
                       <% Museum.museum_field_of_study.each do |field| %>
                       <li><%= field %></li>
-                      <% end %>
+                      <% end %> 
                     </ul>
-                </ul>
+                </ul> 
               <li><%= link_to "Exhibits", exhibits_path %></li>
                 <ul>
                   <% Exhibit.find_name.each do |name| %>
                   <li><%= name %></li>
                   <% end %>
-                </ul>
+                </ul> 
               <li><%= link_to "Become A Curator", new_curator_path %></li>
             <% else %>
               <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
