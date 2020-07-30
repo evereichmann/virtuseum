@@ -3,7 +3,7 @@
     <%= button_to "New Museum", {:action => "new"}, :method => "get" %>
     <% @museums.each do |museum| %>
     <ul>
-        <li><%= link_to museum.name, museum %></li>
+        <li><h2><%= link_to museum.name, museum %></h1></li>
     </ul>
     <% end %>
     </div>
