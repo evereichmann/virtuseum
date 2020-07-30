@@ -22,8 +22,13 @@ class MuseumsController < ApplicationController
 
     def update
         @museum = Museum.find(params[:id])
-        @museum.update(museum_params)
-        redirect_to museum_path(@museum)
+        if [@current_user.id] == @museum.users.ids
+            @museum.update(museum_params)
+            redirect_to museum_path(@museum)
+        else 
+            flash[:error] = "You This Museum's Curator"
+            redirect_to museum_path(@museum)
+        end    
     end
 
     private

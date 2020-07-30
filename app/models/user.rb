@@ -10,14 +10,4 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, presence: true
 
-    # def password=(secret)
-    #    hashed_pass = BCrypt::Password.create(secret) 
-        
-    #    self.password_digest = hashed_pass
-    # end
-
-    # def password
-    #     self.password_digest
-    # end
-
 end
