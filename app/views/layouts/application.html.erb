@@ -24,8 +24,7 @@
                   <li>Type of Museum</li>
                     <ul>
                       <% Museum.museum_field_of_study.each do |field| %>
-                      <li><%= link_to field %></li>
-                      #doesn't work idk what to do right now
+                      <li><%= link_to field, museums_path %></li>
                       <% end %> 
                     </ul>
                      </ul></div> </div>
@@ -33,7 +32,7 @@
               <div class="dropdown-content">  
               <ul>
                   <% Exhibit.find_name.each do |name| %>
-                  <li><%= name %></li>
+                  <li><%= link_to name, exhibits_path %></li>
                   <% end %>
                 </ul> </div> </div>
               <li><%= link_to "Become A Curator", new_curator_path %></li>
