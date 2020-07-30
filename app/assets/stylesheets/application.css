@@ -62,6 +62,12 @@
 
 /* custom */
 
+div {
+    font-family: georgia, serif;
+    padding: 25px 0px 0px 50px;
+    line-height: 2;
+  }
+
 #logo {
     font-family: Didot, serif;
     font-size: 400%;
@@ -79,11 +85,13 @@ h1 {
     font-family: Didot, serif;
     color: lightgrey;
     padding: 0px;
+    font-family: Didot, serif;
   }
 
   #nav a {
       text-decoration: none;
       color: lightgrey;
+      font-family: Didot, serif;
   }
 
   #nav a:hover {
@@ -110,10 +118,6 @@ h1 {
     transition: .5s;
 }
 
-div {
-    padding: 20px 0px 0px 50px;
-  }
-
 /* drop down */
 
 .dropdown {
@@ -133,16 +137,19 @@ div {
   }
   
   .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+    /* color: black; */
     text-decoration: none;
     display: block;
+    padding: 0px;
   }
   
-  .dropdown-content a:hover {background-color: #f1f1f1}
+  /* .dropdown-content a:hover {
+      background-color: black;
+    } */
   
   .dropdown:hover .dropdown-content {
     display: block;
+    padding: 0px;
   }
 
   /* content  */

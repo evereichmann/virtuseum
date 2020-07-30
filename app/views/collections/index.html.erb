@@ -1,3 +1,4 @@
+<div>
 <h1>User Collections</h1>
 <%= button_to "New Collection", {action: "new"}, :method => "get"%>
 <% @collections.each do |collection| %>
@@ -5,3 +6,4 @@
 <li><%= link_to collection.name, collection_path(collection) %></li>
 </ul>
 <% end %>
+</div>
