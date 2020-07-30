@@ -1,3 +1,4 @@
+<div>
 <h1>Museum Index Page</h1>
     <%= button_to "New Museum", {:action => "new"}, :method => "get" %>
     <% @museums.each do |museum| %>
@@ -5,3 +6,4 @@
         <li><%= link_to museum.name, museum %></li>
     </ul>
     <% end %>
+    </div>

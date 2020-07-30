@@ -1,3 +1,4 @@
+<div>
 <% if flash[:error] %>
 <p> <h3><%= flash[:error] %></h3> </p>
 <% end %>
@@ -9,3 +10,4 @@
 <p><%= @item.description %></p>
 <%= button_to "Edit Item", {action: "edit"}, :method => "get"%>
 <%= button_to "Delete Item", item_path(@item), :method => "delete", data: { confirm: "Are you sure? It will be gone forever!" } %>
+</div>

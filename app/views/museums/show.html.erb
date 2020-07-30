@@ -1,3 +1,4 @@
+<div>
 <% if flash[:error] %>
 <p> <h3><%= flash[:error] %></h3> </p>
 <% end %>
@@ -17,3 +18,4 @@
                 <% end %>
                 <br/>  
             <%= button_to "Edit Museum", {:action => "edit"}, :method => "get" %>
+            </div>
