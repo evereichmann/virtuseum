@@ -5,9 +5,8 @@ class CuratorsController < ApplicationController
     end
 
     def create
-        create_params = curator_params.merge(user_id: @current_user.id)
-        @curator = Curator.create(curator_params)
-        redirect_to @current_user
+        Curator.create(user_id: @current_user.id, museum_id: params[:curator][:museum_id])
+        redirect_to museums_path
     end
 
     def edit

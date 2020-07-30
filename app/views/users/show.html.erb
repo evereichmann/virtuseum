@@ -14,5 +14,8 @@
             <% @user.items.each do |item| %>
                 <%= link_to item.name, item_path(item) %>
             <% end %>
+<% if @current_user.id == @user.id %>            
 <%= button_to "Edit Profile", {:action => "edit"}, :method => "get" %>
 <%= button_to "Delete Profile", user_path(@user), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %></div>
+<% else %>
+<% end %>

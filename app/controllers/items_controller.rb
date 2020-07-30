@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+
     #index
     def index
         @items = Item.all
     end    
 #show
     def show
+        @collection = Collection.all
         @item = Item.find(params[:id])
     end    
 #new
@@ -23,13 +25,6 @@ class ItemsController < ApplicationController
         @collection = Collection.all
         @exhibit = Exhibit.all
         @item = Item.find(params[:id])
-
-        if @users == @current_user
-            render :edit
-        else
-            flash[:error] = "Can't Edit Someone Else's Item"
-            redirect_to @item
-        end
     end    
 #update
     def update
@@ -40,12 +35,7 @@ class ItemsController < ApplicationController
 #delete
     def destroy
         @item = Item.find(params[:id])
-        if @users == @current_user
-            @item.destroy
-        else
-            flash[:error] = "Can't Edit Someone Else's Item"
-            redirect_to item_path(@item)
-        end
+        @item.destroy
     end    
 #private params
 private

@@ -16,23 +16,13 @@ class CollectionsController < ApplicationController
     end    
 #create
     def create
-        @collection = Collection.create(collection_params)
-        if @collection.save
-            redirect_to collection_path(@collection)
-        else   
-        redirect_to new_collection_path
-        end    
+        @collection = Collection.create(user_id: @current_user.id, name: params[:collection][:name])
+        redirect_to collection_path(@collection)
     end    
 #edit
     def edit
         @user = User.all
         @collection = Collection.find(params[:id])
-        if @users == @current_user
-            render :edit
-        else
-            flash[:error] = "Can't Edit Someone Else's Collection"
-            redirect_to @collection
-        end
     end    
 #update
     def update
@@ -41,14 +31,10 @@ class CollectionsController < ApplicationController
         redirect_to collection_path(@collection)
     end    
 #delete
-        def destroy
+    def destroy
         @collection = Collection.find(params[:id])
-        if @users == @current_user
-            @collection.destroy
-        else
-            flash[:error] = "Can't Edit Someone Else's Collection"
-            redirect_to collection_path(@collection)
-        end
+        @collection.destroy
+        redirect_to collection_path(@collection)
     end    
 #private params
 private

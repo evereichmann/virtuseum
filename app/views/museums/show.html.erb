@@ -4,7 +4,7 @@
 <h1><%= @museum.name %></h1>
     <h3> Museum of: <%= @museum.field_of_study %> </h3>
     <% @museum.users.each do |user| %>
-        <p>Curator: <%= user.name_first %>  <%= user.name_first %></p>
+        <p>Curator: <%= user.name_first %>  <%= user.name_last %></p>
     <% end %>
     <h3>Information</h3>
         <p><%= @museum.information %></p>
@@ -15,5 +15,5 @@
                     <li><%= link_to exhibit.name, exhibit_path(exhibit) %></li>
                 </ul>
                 <% end %>
-                <br/>
+                <br/>  
             <%= button_to "Edit Museum", {:action => "edit"}, :method => "get" %>
