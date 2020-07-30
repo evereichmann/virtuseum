@@ -16,12 +16,8 @@ class CollectionsController < ApplicationController
     end    
 #create
     def create
-        @collection = Collection.create(collection_params)
-        if @collection.save
-            redirect_to collection_path(@collection)
-        else   
-            redirect_to new_collection_path
-        end    
+        @collection = Collection.create(user_id: @current_user.id, name: params[:collection][:name])
+        redirect_to collection_path(@collection)
     end    
 #edit
     def edit
