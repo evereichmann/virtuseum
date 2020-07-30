@@ -1,9 +1,7 @@
 <div>
 <h1>User Collections</h1>
 <%= button_to "New Collection", {action: "new"}, :method => "get"%>
-<% @collections.each do |collection| %>
-<ul>
-<li><%= link_to collection.name, collection_path(collection) %></li>
-</ul>
-<% end %>
+<div id='columns'><% @collections.each do |collection| %>
+<%= link_to collection.name, collection_path(collection) %><br/>
+<% end %></div>
 </div>

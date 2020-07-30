@@ -64,7 +64,7 @@
 
 div {
     font-family: georgia, serif;
-    padding: 25px 50px 50px 50px;
+    padding: 25px 50px 100px 50px;
     line-height: 2;
   }
 
@@ -76,6 +76,10 @@ div {
 h1 {
     font-family: Didot, serif;
     font-size: 200%;
+ }
+ h2 {
+    font-family: Didot, serif;
+    font-size: 150%;
  }
 
 
@@ -154,4 +158,42 @@ h1 {
 
   /* content  */
 
+  #content {   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: lightgray;
+    flex-flow: row wrap;
+    padding: 20px 0px 0px 0px;
+  }
+
+  #columns {
+    column-count: 6;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    padding: 20px 0px 0px 0px;
+  }
+
+  /* footer */
+
+  footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-family: Didot, serif;
+    width: 100%;
+    background-color: black;
+    color: lightgray;
+    text-align: center;
+    padding: 10px 10px 10px 0px;
+ }
+
+ footer a{
+    color: darkgray;
+    text-decoration: none;
+    }
+
+ footer a:hover{
+ color: white;
+transition: .5s;
+ }
   
