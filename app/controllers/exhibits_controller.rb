@@ -32,9 +32,13 @@ class ExhibitsController < ApplicationController
 
     def update
         @exhibit = Exhibit.find(params[:id])
+        if [@current_user.id] == @exhibit.museum.users.ids
         @exhibit.update(exhibit_params)
         redirect_to exhibit_path(@exhibit)
-        
+        else  
+            flash[:error] = "This is Not Your Exhibit"
+            redirect_to exhibit_path(@exhibit)
+        end
     end
 
     def destroy
