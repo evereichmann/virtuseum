@@ -10,11 +10,10 @@
   </head>
 
   <body>
-    <h1>Virtuseum</h1>
-    <br/>
-        <ul>
+    <h1 id='logo'>Virtuseum</h1>
+        <ul id='nav'>
             <% if @current_user %>
-              <li><a href="/users/<%= @current_user.id %>">Welcome <%= @current_user.name_first %></a></li>
+              <li>| <a href="/users/<%= @current_user.id %>">Welcome <%= @current_user.name_first %></a> | </li>
               <li><%= link_to "Log-out", logout_path, method: :delete %></li>
               <li><%= link_to "Users", users_path %></li>
               <li><%= link_to "Items", items_path %></li>
