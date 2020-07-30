@@ -1,3 +1,4 @@
+<div>
 <% if flash[:error] %>
 <p> <h3><%= flash[:error] %></h3> </p>
 <% end %>
@@ -20,3 +21,4 @@
         <br/>
 <%= button_to "Edit Exhibit", {:action => "edit"}, :method => "get" %>
 <%= button_to "Delete Exhibit", exhibit_path(@exhibit), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
+</div>
