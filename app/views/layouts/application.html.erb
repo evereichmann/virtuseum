@@ -20,20 +20,17 @@
               <li><%= link_to "Collection", collections_path %></li>
               <div class="dropdown"><li><%= link_to "Museums", museums_path %></li>
               <div class="dropdown-content">
-                  <ul>
-                  <li>Type of Museum</li>
                     <ul>
-                      <% Museum.museum_field_of_study.each do |field| %>
-                      <li><%= link_to field %></li>
-                      #doesn't work idk what to do right now
+                      <% Museum.all.each do |museum| %>
+                      <li><%= link_to museum.name, museum %></li>
                       <% end %> 
                     </ul>
-                     </ul></div> </div>
+                  </div> </div>
               <div class="dropdown"><li><%= link_to "Exhibits", exhibits_path %></li>
               <div class="dropdown-content">  
               <ul>
-                  <% Exhibit.find_name.each do |name| %>
-                  <li><%= name %></li>
+                  <% Exhibit.all.each do |exhibit| %>
+                  <li><%= link_to exhibit.name, exhibit %></li>
                   <% end %>
                 </ul> </div> </div>
               <li><%= link_to "Become A Curator", new_curator_path %></li>
