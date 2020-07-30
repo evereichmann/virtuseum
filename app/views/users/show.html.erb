@@ -1,7 +1,8 @@
+<div>
 <%= image_tag(@user.picture)%>
-    <nav class="name">
+
     <h1><%= @user.name_first %> <%= @user.name_last %></h1>
-    </nav>
+
     <h3><%= @user.location %>
         <h3>My Collections</h3>
         <% @user.collections.each do |collection| %>
@@ -14,4 +15,4 @@
                 <%= link_to item.name, item_path(item) %>
             <% end %>
 <%= button_to "Edit Profile", {:action => "edit"}, :method => "get" %>
-<%= button_to "Delete Profile", user_path(@user), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %>
+<%= button_to "Delete Profile", user_path(@user), method: :delete , data: { confirm: "Are you sure? It will be gone forever!"} %></div>

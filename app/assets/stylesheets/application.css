@@ -78,6 +78,7 @@ h1 {
     height: 50px;
     font-family: Didot, serif;
     color: lightgrey;
+    padding: 0px;
   }
 
   #nav a {
@@ -106,14 +107,19 @@ h1 {
   a:hover {
     text-decoration: underline;
     color: black;
-    transition: 2s;
+    transition: .5s;
 }
+
+div {
+    padding: 20px 0px 0px 50px;
+  }
 
 /* drop down */
 
 .dropdown {
     position: relative;
     display: inline-block;
+    padding: 0px;
   }
   
   .dropdown-content {
@@ -137,4 +143,7 @@ h1 {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+  /* content  */
+
   
