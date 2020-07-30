@@ -1,13 +1,15 @@
 <div>
 <h1>Edit Collection</h1>
+<br/>
 User: <%= @current_user.username %>
+<br/>
 <%= form_for @collection do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
-    <br/>
+   <br/><br/>
     <%= f.fields_for :items do |builder| %>
         <%= render 'item_form', f:builder%>
-        <br/>
     <% end%>
+    <br/>
 <%= f.submit %>
 <% end %></div>
