@@ -29,13 +29,19 @@ class ItemsController < ApplicationController
 #update
     def update
         @item = Item.find(params[:id])
-        @item.update(item_params)
-        redirect_to item_path(@item)
+        if @current_user.id == @item.collection.user.id
+            @item.update(item_params)
+            redirect_to item_path(@item)
+        else   
+            flash[:error] = "This is Not Your Item"
+            redirect_to item_path(@item)
+        end    
     end    
 #delete
     def destroy
         @item = Item.find(params[:id])
         @item.destroy
+        redirect_to items_path
     end    
 #private params
 private
