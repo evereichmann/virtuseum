@@ -2,6 +2,7 @@
 <p> <h3><%= flash[:error] %></h3> </p>
 <% end %>
 <%= image_tag(@item.picture) %>
+<%= button_to "Loan Item", {:action => "new", :controller => "loans"}, :method => "get" %>
 <h5><%= @item.name %></h5>
 <h5><%= @item.date_ad_bc %></h5>
 <h5><%= @item.classification %></h5>

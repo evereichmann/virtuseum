@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  resources :loans
   root to: 'pages#home'
   
   resources :museums
   resources :exhibits
-  resources :curators
   resources :collections
   resources :items
   resources :users
+  resources :curators, only: [:new, :edit, :create, :update]
+  resources :loans, only: [:new, :edit, :create, :update]
 
   patch '/sessions/reset_page', to: 'sessions#reset_page', as: 'session_reset'
   get '/sessions/new', to: 'sessions#new', as: 'new_session'
