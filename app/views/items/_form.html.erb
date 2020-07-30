@@ -1,15 +1,15 @@
 <%= form_for @item do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name %><br/><br/>
 <%= f.label :year_created %>
-<%= f.number_field :year_created %>
+<%= f.number_field :year_created %><br/><br/>
 <%= f.label :picture%>
-<%= f.text_field :picture %>
+<%= f.text_field :picture %><br/><br/>
 <%= f.label :classification%>
-<%= f.text_field :classification%>
+<%= f.text_field :classification%><br/><br/>
 <%= f.label :collection_id%>
-<%= f.collection_select :collection_id, @current_user.collections , :id, :name %>
+<%= f.collection_select :collection_id, @current_user.collections , :id, :name %><br/><br/>
 <%= f.label :description %>
-<%= f.text_area :description %>
+<%= f.text_area :description %><br/><br/>
 <%= f.submit %>
 <% end %>
