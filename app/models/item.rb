@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
     belongs_to :collection
-    belongs_to :exhibit
+    # belongs_to :exhibit
+    has_many :exhibit, through: :loans
 
 
     def date_ad_bc
