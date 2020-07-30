@@ -24,18 +24,9 @@ class ExhibitsController < ApplicationController
 
 
     def edit
-        # @museum = Museum.all
         @exhibit = Exhibit.find(params[:id])
         @museum = @exhibit.museum
         @users = @museum.users
-
-
-        if @users == @current_user
-            render :edit
-        else
-            flash[:error] = "Can't Edit Someone Else's Exhibit"
-            redirect_to @exhibit
-        end
 
     end
 
@@ -43,16 +34,13 @@ class ExhibitsController < ApplicationController
         @exhibit = Exhibit.find(params[:id])
         @exhibit.update(exhibit_params)
         redirect_to exhibit_path(@exhibit)
+        
     end
 
     def destroy
         @exhibit = Exhibit.find(params[:id])
-        if @users == @current_user
-            @exhibit.destroy(exhibit_params)
-        else
-            flash[:error] = "Can't Edit Someone Else's Exhibit"
-            redirect_to exhibit_path(@exhibit)
-        end
+        @exhibit.destroy(exhibit_params)
+        redirect_to exhibits_path
     end    
 
     private
