@@ -18,7 +18,8 @@
               <li><%= link_to "Users", users_path %></li>
               <li><%= link_to "Items", items_path %></li>
               <li><%= link_to "Collection", collections_path %></li>
-              <li><%= link_to "Museums", museums_path %></li>
+              <div class="dropdown"><li><%= link_to "Museums", museums_path %></li>
+              <div class="dropdown-content">
                   <ul>
                   <li>Type of Museum</li>
                     <ul>
@@ -26,13 +27,14 @@
                       <li><%= field %></li>
                       <% end %> 
                     </ul>
-                </ul> 
-              <li><%= link_to "Exhibits", exhibits_path %></li>
-                <ul>
+                     </ul></div> </div>
+              <div class="dropdown"><li><%= link_to "Exhibits", exhibits_path %></li>
+              <div class="dropdown-content">  
+              <ul>
                   <% Exhibit.find_name.each do |name| %>
                   <li><%= name %></li>
                   <% end %>
-                </ul> 
+                </ul> </div> </div>
               <li><%= link_to "Become A Curator", new_curator_path %></li>
             <% else %>
               <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
