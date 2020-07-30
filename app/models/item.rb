@@ -14,5 +14,6 @@ class Item < ApplicationRecord
             else
                 0
             end    
-        end   
+        end 
+            
 end

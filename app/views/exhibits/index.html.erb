@@ -1,5 +1,4 @@
 <h1>Exhibit Index Page</h1>
-<%= button_to "Home", {:action => "home", :controller => "pages"}, :method => "get"%>
     <% @exhibits.each do |exhibit| %>
     <ul>
         <li><%= link_to exhibit.name, exhibit %></li>

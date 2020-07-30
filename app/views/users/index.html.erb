@@ -1,5 +1,4 @@
 <h1>User Index Page</h1>
-<%= button_to "Home", {:action => "home", :controller => "pages"}, :method => "get"%>
     <% @users.each do |user| %>
     <ul>
         <li><%= link_to user.name_first, user_path(user) %> <%= link_to user.name_last, user_path(user) %></li>
