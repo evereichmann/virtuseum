@@ -1,0 +1,7 @@
+<%= form_for @loan do |f| %>
+<%= f.label :item_id %>
+<%= f.collection_select :item_id, Item.all, :id, :name%>
+<%= f.label :exhibit_id%>
+<%= f.collection_select :exhibit_id, Exhibit.all , :id, :name %>
+<%= f.submit %>
+<% end %>
