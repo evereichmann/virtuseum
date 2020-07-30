@@ -1,9 +1,8 @@
 <div>
 <h1>Exhibit Index Page</h1>
-<%= button_to "New Exhibits", {action: "new"}, :method => "get"%>
-    <% @exhibits.each do |exhibit| %>
-    <ul>
-        <li><%= link_to exhibit.name, exhibit %></li>
-    </ul>
-    <% end %>
+<%= button_to "New Exhibit", {action: "new"}, :method => "get"%>
+<div id='content'><% @exhibits.each do |exhibit| %>
+    <div><%= link_to image_tag(exhibit.picture, height: "350px"), exhibit_path(exhibit) %><br/>
+    <%= link_to exhibit.name, exhibit %></div>
+    <% end %></div>
 </div>

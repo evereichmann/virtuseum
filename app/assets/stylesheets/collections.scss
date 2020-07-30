@@ -1,35 +1,3 @@
 // Place all the styles related to the Collections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-#content {   
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    // grid-template-rows: repeat(5, 1fr);
-    // grid-column-gap: 5px;
-    // grid-row-gap: 5px;
-    // border: 1px solid black;
-    // display: flex;
-    /* flex-direction: row;
-    flex-wrap: wrap; */
-    flex-flow: row wrap;
-    // justify-content: space-around;
-    padding: 20px 0px 0px 0px;
-  }
-  
-  
-//   .index-tile {
-      
-//     border: 3px solid black;
-//     border-radius: 25px;
-//     margin: 5px;
-//     padding: 10px;
-//     text-align: center;
-//   }
-  
-//   .index-tile:hover {
-//     background-color: teal;
-//   }
-  
-//   .tile-img {
-//     width: 150px;
-//   }
