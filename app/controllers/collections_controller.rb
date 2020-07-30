@@ -27,8 +27,13 @@ class CollectionsController < ApplicationController
 #update
     def update
         @collection = Collection.find(params[:id])
-        @collection.update(collection_params)
-        redirect_to collection_path(@collection)
+        if @current_user.id == @collection.user.id
+            @collection.update(collection_params)
+            redirect_to collection_path(@collection)
+        else   
+            flash[:error] = "This is Not Your Collection"
+            redirect_to collection_path(@collection)
+        end    
     end    
 #delete
     def destroy
