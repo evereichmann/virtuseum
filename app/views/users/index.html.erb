@@ -1,7 +1,7 @@
 <div>
 <h1>User Index Page</h1>
 <div id='content'><% @users.each do |user| %>
-    <div><%= link_to image_tag(user.picture, height: "350px"), user_path(user) %><br/>
+    <div><%= link_to image_tag(user.picture, height: "250px"), user_path(user) %><br/>
     <%= link_to user.name_first + ' ' + user.name_last, user_path(user) %></div>
     <% end %></div>
     </div>
