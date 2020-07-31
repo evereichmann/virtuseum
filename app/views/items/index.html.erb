@@ -2,7 +2,7 @@
 <h1>The Archive Basement</h1>   
         <%= button_to "New Item", {action: "new"}, :method => "get"%>
         <div id='content'><% @items.each do |item| %>
-            <div><%= link_to image_tag(item.picture, height: "350px"), item_path(item)%><br/>
+            <div><%= link_to image_tag(item.picture, height: "250px"), item_path(item)%><br/>
             <%= link_to item.name, item_path(item) %></div>
         <% end %></div>
         </div>

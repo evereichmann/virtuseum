@@ -6,7 +6,7 @@
 <p>User: <a href="/users/<%= @collection.user.id%>"><%= @collection.user.name_first %> <%= @collection.user.name_last %></a></p>
 <br/>
 <div id='content'><% @collection.items.each do |item| %>
-    <div><%= link_to image_tag(item.picture, height: "350px"), item_path(item) %><br/>
+    <div><%= link_to image_tag(item.picture, height: "250px"), item_path(item) %><br/>
 <%= link_to  item.name, item_path(item) %></div>
 <% end %></div><br/>
 <%= button_to "Edit Collection", {:action => "edit"}, :method => "get" %>
